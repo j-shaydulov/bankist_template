@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+    <script src="https://kit.fontawesome.com/51086e51b0.js" crossorigin="anonymous"></script>
 
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
@@ -15,7 +16,7 @@
   </head>
   <body>
     <header class="header">
-      <nav class="nav">
+      <nav class="nav sticky">
         <img
           id="Logo"
           class="nav__logo"
@@ -38,10 +39,12 @@
             >
           </li>
         </ul>
+        <i class="openbar fa-solid fa-bars"></i>
       </nav>
 
       <div class="header__title">
-        <h1>
+        <div class="header_top">
+          <h1>
           When 
           
           <span class="highlight">banking</span>
@@ -49,12 +52,13 @@
           <span class="highlight">minimalist</span>
         </h1>
         <h4>A simpler banking experience for a simpler life.</h4>
+        </div>
         <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
         <img class="header__img" src="img/hero.png" alt="Minimalist item" />
       </div>
     </header>
 
-    <section class="section" id="section--1">
+    <section class="section section_1" id="section--1">
       <div class="section__title">
         <h2 class="section__description">Features</h2>
         <h3 class="section__header">
@@ -64,12 +68,12 @@
 
       <div class="features">
         <img
-          class="features__img lazy-img"
+          class="komp features__img lazy-img"
           src="img/digital-lazy.jpg"
           data-src="img/digital.jpg"
           alt="computer"
         />
-        <div class="features__feature">
+        <div class="bank features__feature">
           <div class="features__icon">
             <svg>
               <use xlink:href="img/icons.svg#icon-monitor"></use>
@@ -83,7 +87,7 @@
           </p>
         </div>
 
-        <div class="features__feature">
+        <div class="money features__feature">
           <div class="features__icon">
             <svg>
               <use xlink:href="img/icons.svg#icon-trending-up"></use>
@@ -96,10 +100,10 @@
             inventore!
           </p>
         </div>
-        <img src="img/grow-lazy.jpg" data-src="img/grow.jpg" alt="plant" class="features__img lazy-img">
-        <img src="img/card-lazy.jpg" data-src="img/card.jpg" alt="credit card" class="features__img lazy-img">
+        <img src="img/grow-lazy.jpg" data-src="img/grow.jpg" alt="plant" class="barg features__img lazy-img">
+        <img src="img/card-lazy.jpg" data-src="img/card.jpg" alt="credit card" class="karta features__img lazy-img">
 
-        <div class="features__feature">
+        <div class="card features__feature">
           <div class="features__icon">
             <svg>
               <use xlink:href="img/icons.svg#icon-credit-card"></use>
@@ -126,15 +130,15 @@
       <div class="operations">
         <div class="operations__tab-container">
           <button
-            class="btn operations__tab operations__tab--1 operations__tab--active"
+            class="btn butt operations__tab operations__tab--1 operations__tab--active"
             data-tab="1"
           >
             <span>01</span> Instant Transfers
           </button>
-          <button class="btn operations__tab operations__tab--2" data-tab="2">
+          <button class="btn butt operations__tab operations__tab--2" data-tab="2">
             <span>02</span> Instant Loans
           </button>
-          <button class="btn operations__tab operations__tab--3" data-tab="3">
+          <button class="btn butt operations__tab operations__tab--3" data-tab="3">
             <span>03</span> Instant Closing
           </button>
         </div>
@@ -342,6 +346,27 @@
     <!-- Overlay -->
 
     <div class="overlay hidden"></div>
+    <div class="overla hidden"></div>
+
+    <div class="hidden navbar">
+      <ul class="bar">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Open account</a
+            >
+          </li>
+        </ul>
+        <button class="close_nav">&#x2716;</button>
+    </div>
 
     <script src="script.js"></script>
   </body>

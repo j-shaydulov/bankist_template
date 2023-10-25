@@ -122,7 +122,7 @@ img{
     z-index: 100;
 }
 
-.nav .sticky{
+.sticky{
     position: fixed;
     background-color: rgba(255, 255, 255, 0.95);
 }
@@ -614,6 +614,17 @@ h4{
     transition: all 0.5s;
 }
 
+.overla{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: 100;
+    transition: all 0.5s;
+}
+
 .modal__header{
     font-size: 3.25rem;
     margin-bottom: 4.5rem;
@@ -680,4 +691,151 @@ h4{
     position: fixed;
     bottom: 0;
     z-index: 2;
+}
+
+.fa-bars{
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 20px;
+    z-index: 100;
+    animation-name: nav-bar;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    right: 0px;
+}
+
+@keyframes nav-bar{
+    0%{
+      right: -100px;
+    }
+    100%{
+      right: 0px;
+    }
+  }
+
+.bar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    list-style: none;
+}
+
+.close_nav{
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    background: none;
+    font-size: 3rem;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    html{
+        font-size: 50%;
+    }
+    .nav__links{
+        display: none;
+    }
+    .fa-bars{
+        display: flex;
+        font-size: 2.5rem;
+    }
+    .nav{
+        padding: 0;
+        margin-top: 1rem;
+    }
+    .nav__item{
+        margin: 0;
+    }
+
+    .header__title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10rem;
+    }
+    .header__img{
+        transform: none;
+    }
+    .header_top{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .section_1{
+        text-align: center;
+    }
+    .features{
+        grid-template-columns: auto;
+        margin: 0;
+    }
+    .features__feature {
+        width: 100%;
+    }
+    .bank{
+        grid-row: 1;
+    }
+    .card{
+        grid-row: 5;
+    }
+    .features__icon{
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    .features__img{
+        margin: 0 auto;
+    }
+    .features__feature {
+        margin: 0;
+    }
+
+
+    .section__title{
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+    }
+
+    .operations__content--active{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .operations__icon{
+        margin: 0 auto;
+    }
+
+    .operations__tab-container{
+        gap: 2rem;
+    }
+    .operations__tab{
+        margin: 0;
+    }
+    .butt{
+        padding: 1rem 2rem;
+    }
+    .operations__content{
+        padding: 0 1rem 5rem;
+    }
+
+
+    .footer__nav{
+        flex-wrap: wrap;
+    }
 }

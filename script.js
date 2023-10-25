@@ -2,6 +2,7 @@ const modal = document.querySelector('.modal');
 const btnOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const overlay = document.querySelector('.overlay');
+const overla = document.querySelector('.overla');
 
 const body = document.body;
 
@@ -35,6 +36,35 @@ cookie.style.backgroundColor = 'black'
 cookie.style.padding = '1rem 0'
 
 document.querySelector('.btn--close-cookie').addEventListener('click', ()=> cookie.remove())
+
+
+// hamburger
+
+
+const btnOpenBar = document.querySelectorAll('.openbar');
+const btnCloseBar = document.querySelector('.close_nav');
+const Bar = document.querySelector('.navbar');
+// console.log(btnOpenModal);
+
+for (let i = 0; i < btnOpenBar.length; i++) {
+  btnOpenBar[i].addEventListener('click', () => {
+    Bar.classList.remove('hidden');
+    overla.classList.remove('hidden');
+  });
+}
+
+function closeBar() {
+  Bar.classList.add('hidden');
+  overla.classList.add('hidden');
+}
+
+btnCloseBar.addEventListener('click', closeBar);
+overla.addEventListener('click', closeBar);
+
+document.addEventListener('keydown', e => {
+  console.log(e);
+  if (e.key === 'Escape') closeBar();
+});
 
 
 // operations
@@ -83,8 +113,6 @@ nav.addEventListener('mouseover', function(e){
     links.forEach(link =>{
       if(link != e.target) link.style.opacity = 0.5;  
     })
-
-    console.log(links);
   }
 });
 
@@ -95,7 +123,42 @@ nav.addEventListener('mouseout', function (e) {
       if (link != e.target) link.style.opacity = 1;
     });
 
-    console.log(links);
 });
 
 
+//nav bar sticky
+
+
+const header = document.querySelector('.header');
+console.log(header);
+console.log(nav);
+
+function stickyNav(entries){
+  let [entry] = entries;
+  console.log(entry);
+
+  if(!entry.isIntersecting){
+    nav.classList.add('sticky');
+    console.log(9000);
+  }
+  else{
+    nav.classList.remove('sticky');
+    console.log(8000);
+  }
+}
+
+let navHeight = nav.getBoundingClientRect().height;
+
+let headerObserverOption = {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`
+};
+
+let headerObserver = new IntersectionObserver(stickyNav, headerObserverOption);
+
+headerObserver.observe(header)
+
+
+
+const allLazyImages = document.querySelectorAll('img[data-src]')
