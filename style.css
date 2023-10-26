@@ -40,7 +40,7 @@ body{
 
 .section--hidden{
     opacity: 0;
-    transform: translate(8rem);
+    transform: translateY(8rem);
 }
 
 .section__title{
@@ -120,6 +120,7 @@ img{
     width: 100%;
     padding: 0 6rem;
     z-index: 100;
+    position: relative;
 }
 
 .sticky{
@@ -755,6 +756,7 @@ h4{
     .nav{
         padding: 0;
         margin-top: 1rem;
+        padding: 0 2rem;
     }
     .nav__item{
         margin: 0;
