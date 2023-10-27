@@ -63,6 +63,18 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeBar();
 });
 
+
+//scroll to
+
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('.section_1');
+
+btnScrollTo.addEventListener('click', (e)=>{
+  section1.scrollIntoView({behavior: 'smooth'})
+})
+
+
 // operations
 
 const tabsContainer = document.querySelector('.operations__tab-container');
@@ -142,6 +154,7 @@ let headerObserver = new IntersectionObserver(stickyNav, headerObserverOption);
 headerObserver.observe(header);
 
 //reveal section
+// prevSlide
 
 const allSections = document.querySelectorAll('.section');
 
@@ -264,35 +277,35 @@ dotsContainer.addEventListener('click', (e)=>{
 })
 
 
-// ... Your existing code ...
+//touch
+
 
 let touchStartX = 0;
 let touchEndX = 0;
 
-// Function to handle touch start event
 const handleTouchStart = (e) => {
   touchStartX = e.touches[0].clientX;
 };
 
-// Function to handle touch move event
 const handleTouchMove = (e) => {
   touchEndX = e.touches[0].clientX;
 };
 
-// Function to handle touch end event and determine the swipe direction
 const handleTouchEnd = () => {
   const swipeDistance = touchEndX - touchStartX;
 
   if (swipeDistance > 50) {
-    prevSlide(); // Swipe right, go to the previous slide
+    prevSlide();
   } else if (swipeDistance < -50) {
-    nextSlide(); // Swipe left, go to the next slide
+    nextSlide();
   }
+
 };
 
-// Add touch event listeners
-document.addEventListener('touchstart', handleTouchStart);
-document.addEventListener('touchmove', handleTouchMove);
-document.addEventListener('touchend', handleTouchEnd);
+slides.forEach(slide =>{
+  slide.addEventListener('touchstart', handleTouchStart);
+  slide.addEventListener('touchmove', handleTouchMove);
+  slide.addEventListener('touchend', handleTouchEnd);
+})
 
-// ... The rest of your code ...
+

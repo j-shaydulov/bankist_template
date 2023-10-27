@@ -118,7 +118,7 @@ img{
     align-items: center;
     height: 9rem;
     width: 100%;
-    padding: 0 6rem;
+    padding: 0 4rem;
     z-index: 100;
     position: relative;
 }
@@ -227,7 +227,6 @@ h4{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    margin: 0 12rem;
 }
 
 .features__img{
@@ -740,9 +739,26 @@ h4{
     font-size: 3rem;
 }
 
-
+@media screen and (max-width: 912px){
+    html{
+        font-size: 54.5%;
+    }
+}
 
 @media screen and (max-width: 800px) {
+    .header{
+        height: inherit;
+        padding-bottom: 15rem;
+    }
+    .features__header{
+        font-size: 4rem;
+    }
+    h1{
+        font-size: 6rem;
+    }
+    h4{
+        text-align: center;
+    }
     html{
         font-size: 50%;
     }
@@ -755,8 +771,8 @@ h4{
     }
     .nav{
         padding: 0;
-        margin-top: 1rem;
         padding: 0 2rem;
+        padding-top: 1rem;
     }
     .nav__item{
         margin: 0;
@@ -832,12 +848,69 @@ h4{
     .butt{
         padding: 1rem 2rem;
     }
+    .slider__btn{
+        display: none;
+    }
     .operations__content{
         padding: 0 1rem 5rem;
     }
 
 
+    .slide{
+        text-align: center;
+        justify-content: start;
+        width: 153%;
+    }
+
+    .testimonials__text{
+        font-size: 1.5rem;
+    }
+
+    .footer{
+        padding: 7rem 3rem;
+    }
     .footer__nav{
         flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .cookie-message{
+        font-size: 1rem;
+    }
+    .cookie-message .btn{
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .modal{
+        padding: 5rem 2rem;
+    }
+    .modal__header{
+        font-size: 2.5rem;
+    }
+    .modal__form{
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .nav{
+        padding: 0 2rem;
+        padding-top: 1rem;
+    }
+    h1{
+        font-size: 5.5rem;
+    }
+    .features__header{
+        font-size: 2rem;
+    }
+    .butt{
+        font-size: 1rem;
+    }
+    .section__header {
+        font-size: 3rem;
     }
 }
